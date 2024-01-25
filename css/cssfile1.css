@@ -1,0 +1,181 @@
+#button1 {
+	width: 10rem;
+	height: 10rem;
+	perspective: 12.5rem;
+	animation: car1 3s, 10s;
+
+}
+
+@keyframes car2 {
+	0% {
+		filter: blur(5px);
+	}
+
+	25% {
+		filter: blur();
+	}
+
+	75% {
+		filter: blur();
+	}
+
+	100% {
+		filter: blur(5px);
+	}
+}
+
+#img1 {
+	animation: car2 3s;
+	animation-delay: 3s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes car1 {
+	0% {
+		opacity: 0;
+		transform: translateY(7.5rem) translateZ(100px);
+		transform: rotate3d(180, 180, 180, 180);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0rem) translateZ(100px) transform: rotate3d(0, 0, 0, 0);
+	}
+}
+
+#zheng {
+	
+	
+	margin: auto;
+	text-align: center;
+	color: antiquewhite;
+	font-size: 3.125rem;
+}
+
+#kaibaila {
+	position: absolute;
+	text-align: center;
+	color: antiquewhite;
+	display: block;
+	width: 90%;
+	background-color: rgba(111, 200, 13, 0);
+}
+
+#button2 {}
+
+.circle {
+	background-image: radial-gradient(circle, #111111 20%, transparent 1);
+}
+
+/* 翻页 */
+.cards,
+.card,
+.img-box,
+.cardimg {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.cards {
+	position: absolute;
+	top: 10%;
+	left: 10rem;
+	width: 18.75rem;
+	height: 18.75rem;
+	display: block;
+	justify-content: center;
+	align-items: center;
+	background-color: gray;
+
+}
+
+.card {
+	position: absolute;
+
+	box-shadow: 2.5rem 1.25rem 1.25rem rgba(115, 115, 115, 0.8);
+	background-color: antiquewhite;
+	transform: perspective 1000;
+	transform-style: preserve-3d;
+	transition: 1s;
+	margin: auto
+}
+
+#card1 {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#card2 {
+	position: absolute;
+	left: 65rem;
+	top: 0;
+}
+
+#card3 {
+	position: absolute;
+	left: 0;
+	top: 31.25rem;
+}
+
+#card4 {
+	position: absolute;
+	left: 65rem;
+	top: 31.25rem;
+}
+
+.card:hover {
+	transform: translateX(50%);
+}
+
+.card .img-box {
+
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: 1s;
+	transform-origin: left;
+	background-color: royalblue;
+	box-shadow: 2.5rem 1.25rem 1.25rem rgba(0, 255, 0, 0.8);
+	z-index: 2;
+}
+
+.card:hover .img-box {
+	transform: rotateY(-180deg);
+}
+
+
+.card .img-box .cardimg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 18.75rem;
+	height: 18.75rem;
+	backface-visibility: hidden;
+	object-fit: cover;
+	transform-style: preserve-3d;
+}
+
+.card .img-box .cardimg:nth-child(2) {
+	transform: rotateY(180deg);
+}
+
+
+.card .stens {
+	width: 18.75rem;
+	height: 18.75rem;
+	justify-content: center;
+	align-items: center;
+	background-color: aqua;
+}
+
+.card .stens img {
+	width: 18.75rem;
+	height: 18.75rem;
+}
+
+* {
+	cursor: url('../img/cheems.webp');
+}
