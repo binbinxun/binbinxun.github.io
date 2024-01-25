@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>mc</title>
+		<style>
+			
+			div a:hover{
+				color: white;
+			}
+			#daohang {
+				position: fixed;top: 0%;left: 0%;
+				height: 100%;
+				width: 16%;
+				background-color: rgba(135, 227, 125, 0.5);
+				overflow: hidden;
+			}
+
+			#daohang button {
+				height: 10%;
+				width: 80%;
+				margin: auto;
+				left: 1rem;
+				background-color: rgba(167, 201, 66, 0.5);
+				position: relative;
+				top: 0%;
+				transition: 1s;
+				transition-property: all;
+				overflow: hidden;
+			}
+
+			#daohang button:hover {
+				box-shadow: #4c701c 1rem 1rem;
+				background-color: rgba(169, 203, 66, 0.5);
+				top: -3%;
+				transition: 1s;
+				transition-property: all;
+			}
+
+			#daohang .jianGe {
+				height: 10%;
+				display: block;
+			}
+
+			#bgimg {
+				height: 100%;
+				width: 100%;
+				animation: car2 3s;
+				animation-iteration-count: infinite;
+				z-index: 0;
+				position: fixed;
+			}
+
+			@keyframes car2 {
+				0% {
+					filter: blur(10px);
+				}
+
+				25% {
+					filter: blur()
+				}
+
+				75% {
+					filter: blur()
+				}
+
+				100% {
+					filter: blur(10px)
+				}
+			}
+
+			#introduction {
+				position: absolute;
+				left: 20%;
+				top: 0;
+				width: 60%;
+				height: 180%;
+				z-index: 2;
+				color: #696c98;
+			}
+
+
+
+			#jianjie {
+				position: absolute;
+				top: 2%;
+				left: 10%;
+				width: 10%;
+				height: 8%;
+				display: block;
+				text-align: center;
+				z-index: 55;
+				display: block;
+
+			}
+
+			#jianjie th {
+				border-right: #4c701c solid 0.125rem;
+				font-size: 1.1em;
+				text-align: left;
+				padding-top: 5px;
+				padding-bottom: 4px;
+				background-color: rgba(167, 201, 66, 0.5);
+				color: #cccccc;
+				width: 10%;
+				padding: 3px 7px 2px 7px;
+
+
+			}
+
+			#isJianjie:hover {
+				background-color: rgba(75, 179, 91, 0.5);
+			}
+
+			#qunxi:hover {
+				background-color: rgba(164, 179, 166, 0.5);
+			}
+
+			#jianjieneirong {
+				color: rgb(88, 54, 189);
+
+			}
+
+			#jjie {
+				padding: 1rem;
+				position: absolute;
+				top: 5.5%;
+				background-color: rgba(75, 179, 91, 0.8);
+				width: 90%;
+				height: 90%;
+				box-shadow: rgba(128, 154, 50, 0.5) 1rem 1rem 1rem 1rem;
+				display: block;
+			}
+
+			#toBeSure {
+				padding: 1rem;
+				position: absolute;
+				top: 5.5%;
+				background-color: rgba(75, 179, 91, 0.8);
+				width: 90%;
+				height: 90%;
+				box-shadow: #4c701c 1rem 1rem 1rem 1rem;
+				display: none;
+				text-align: center;
+			}
+			#toBeSure ul{
+				height: 90%;margin: auto;text-align: center;
+			}
+			#toBeSure ul li{
+				background-color: rgba(159, 218, 158, 0.5);text-align: center;list-style: none;
+			}
+			#toBeSure ul li:hover{
+				background-color: rgba(83, 140, 77, 0.5);
+			}
+
+			/* .tag{
+				position:absolute;
+				clip:rect(60px,3px,0px,0px);
+				height:6.25rem;
+				width: 6.25rem;
+			} */
+			.gamePattern {
+				display: inline-block;
+				position: absolute;
+				width: 30%;
+				background-color: rgba(135, 227, 125, 0.5);
+				float: left;
+			}
+
+			.gamePattern span {
+
+				display: block;
+				text-align: center;
+				background-image: url('img/5.jpeg');
+				color: #696098;
+				top: 0;
+				width: 100%;
+				color: cornflowerblue;
+			}
+
+			.gamePattern ul {
+				background-color: ;
+				width: 80%;
+				display: block;
+				margin-right: 4rem;
+				margin-left: 1rem;
+			}
+
+			.gamePattern:nth-child(5) {
+				left: 33%;
+				padding: 0 1.5%;
+				background-clip: content-box;
+			}
+
+			.gamePattern:nth-child(4) {
+				left: 66%;
+				padding: 0 1.5%;
+				background-clip: content-box;
+			}
+
+			table {}
+		</style>
+	</head>
+	<body>
+		<audio src="bgm/点击 (V0.mp3" id="clickM"></audio>
+		<audio src="bgm/C418 - Minecraft.mp3" loop autoplay></audio>
+		<img src="img/3.jpg" alt="" id="bgimg">
+		<div id="introduction">
+			<table id="jianjie">
+				<th id="isJianjie" onclick="kanJianjie()">首页</th>
+				<th id="qunxi" onclick="kanWeiding()">群系</th>
+			</table>
+			<div id="jjie" style="" style="">
+				<span style="display: block;
+				text-align: center;
+				background-image: url('img/5.jpeg');
+				color: #696098;
+				top: 0;
+				width: 100%;
+				color: cornflowerblue;">简介</span>
+				<span id="jianjieneirong">
+
+
+					&nbsp;&nbsp;&nbsp;&nbsp;Minecraft（我的世界）是一款沙盒式建造游戏，缔造者为Mojang<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;Studios创始人马库斯·佩尔松，其灵感源于《无尽矿工》､《矮人要塞》和《地下城守护者》。现首席创意官为延斯·伯根斯坦，首席开发者为昂内丝·拉尔森。玩家可以在游戏中的三维空间里创造和破坏林林总总的方块，甚至在多人服务器与单人世界中体验不同的游戏模式，打造精妙绝伦的建筑物，创造物和艺术品。时至今日，Minecraft的游戏平台已囊括了移动设备和游戏主机。<br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;Minecraft着重于让玩家去探索、交互、并且改变一个由一立方米大小的方块动态生成的地图。除了方块以外，环境单体还包括植物、生物与物品。游戏里的各种活动包括采集矿石、与敌对生物战斗、合成新的方块与收集各种在游戏中找到的资源的工具。游戏中的无限制模式让玩家在各种多人游戏服务器或他们的单人模式中进行创造建筑物、作品与艺术创作。其他功能包括逻辑运算与远程动作的红石电路、矿车及轨道，以及称之为“下界”的神秘世界。最终，可以选择前往一个叫做“末地”的维度冒险，并击败末影龙。
+					<br></span>
+				<div class="gamePattern">
+					<span style="">
+						游戏模式</span>
+					<ul style=" ">
+						<li
+							style="background-image:url('img/mc/FrontPageSprite.png');background-position: top -2.8rem left 4rem  ; background-repeat: no-repeat;width: 80px;height: 20px;">
+							<a href="mcshengcun.html">生存模式
+								<!-- <img class="tag" src="img/mc/FrontPageSprite.png" alt=""style=""  > -->
+							</a>
+						</li>
+						<li><a href="">创造模式</a></li>
+						<li><a href="">极限模式</a></li>
+						<li><a href="">冒险模式</a></li>
+						<li><a href="">旁观模式</a></li>
+						<li><a href="">演示模式</a></li>
+				</div>
+				<div class="gamePattern">
+					<span style="">
+						配方</span>
+					<ul style=" ">
+
+						<li><a href="">酿造</a></li>
+						<li><a href="">合成</a></li>
+						<li><a href="">熔炼</a></li>
+
+				</div>
+				<div class="gamePattern">
+					<span style="">
+						机制</span>
+					<ul style=" ">
+						<li>
+							<a href="">铁砧
+								<!-- <img class="tag" src="img/mc/FrontPageSprite.png" alt=""style=""  > -->
+							</a>
+						</li>
+						<li><a href="">附魔</a></li>
+						<li><a href="">红石电路</a></li>
+						<li><a href="">交易</a></li>
+
+				</div>
+
+
+				<hr color="black" style="position:relative;top:20%">
+				<div id="kaibai" style="position: relative;top:20%;left:40%">
+					<a href="biaodan.html">加入我们</a><br>资料来自<a href="https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki?variant=zh-hant&1343904226=">
+					Minecraft 中文wiki</a>
+				</div>
+			</div>
+
+			<div id="toBeSure" style="">
+				<span style="font-family: fantasy;color:rgba(29, 78, 115, 1.0);display:block;" >生物群系（Biome）是Minecraft世界中形态各异的地区，有着多样的地理特征、植物群、海拔高度、温度、湿度、天空及植被颜色。生物群系将生成的世界划分为一个个不同的自然环境，譬如森林、丛林、沙漠和针叶林。
+				</span><ul>
+					<li class="toclevel-1 tocsection-1"><a href="#温度系统"><span class="tocnumber">1</span> <span
+								class="toctext">温度系统</span></a></li>
+					<li class="toclevel-1 tocsection-2"><a href="#生成"><span class="tocnumber">2</span> <span
+								class="toctext">生成</span></a>
+						<ul>
+							<li class="toclevel-2 tocsection-3"><a href="#生物群系集群"><span class="tocnumber">2.1</span>
+									<span class="toctext">生物群系集群</span></a></li>
+							<li class="toclevel-2 tocsection-4"><a href="#生物群系边缘"><span class="tocnumber">2.2</span>
+									<span class="toctext">生物群系边缘</span></a></li>
+							<li class="toclevel-2 tocsection-5"><a href="#其他信息"><span class="tocnumber">2.3</span> <span
+										class="toctext">其他信息</span></a></li>
+						</ul>
+					</li>
+					<li class="toclevel-1 tocsection-6"><a href="#生物群系种类"><span class="tocnumber">3</span> <span
+								class="toctext">生物群系种类</span></a>
+						<ul>
+							<li class="toclevel-2 tocsection-7"><a href="#主世界生物群系"><span class="tocnumber">3.1</span>
+									<span class="toctext">主世界生物群系</span></a>
+								<ul>
+									<li class="toclevel-3 tocsection-8"><a href="#积雪生物群系"><span
+												class="tocnumber">3.1.1</span> <span class="toctext">积雪生物群系</span></a>
+									</li>
+									<li class="toclevel-3 tocsection-9"><a href="#寒冷生物群系"><span
+												class="tocnumber">3.1.2</span> <span class="toctext">寒冷生物群系</span></a>
+									</li>
+									<li class="toclevel-3 tocsection-10"><a href="#温和/茂密生物群系"><span
+												class="tocnumber">3.1.3</span> <span
+												class="toctext">温和/茂密生物群系</span></a></li>
+									<li class="toclevel-3 tocsection-11"><a href="#干燥/温暖生物群系"><span
+												class="tocnumber">3.1.4</span> <span
+												class="toctext">干燥/温暖生物群系</span></a></li>
+									<li class="toclevel-3 tocsection-12"><a href="#海洋生物群系"><span
+												class="tocnumber">3.1.5</span> <span class="toctext">海洋生物群系</span></a>
+									</li>
+									<li class="toclevel-3 tocsection-13"><a href="#洞穴生物群系"><span
+												class="tocnumber">3.1.6</span> <span class="toctext">洞穴生物群系</span></a>
+									</li>
+									<li class="toclevel-3 tocsection-14"><a href="#中性及其他生物群系"><span
+												class="tocnumber">3.1.7</span> <span
+												class="toctext">中性及其他生物群系</span></a></li>
+								</ul>
+							</li>
+							<li class="toclevel-2 tocsection-15"><a href="#下界生物群系"><span class="tocnumber">3.2</span>
+									<span class="toctext">下界生物群系</span></a></li>
+							<li class="toclevel-2 tocsection-16"><a href="#末地生物群系"><span class="tocnumber">3.3</span>
+									<span class="toctext">末地生物群系</span></a></li>
+							<li class="toclevel-2 tocsection-17"><a href="#已移除的生物群系"><span class="tocnumber">3.4</span>
+									<span class="toctext">已移除的生物群系</span></a></li>
+						</ul>
+					</li>
+					<li class="toclevel-1 tocsection-18"><a href="#生物群系ID"><span class="tocnumber">4</span> <span
+								class="toctext">生物群系ID</span></a></li>
+					<li class="toclevel-1 tocsection-19"><a href="#生物群系颜色"><span class="tocnumber">5</span> <span
+								class="toctext">生物群系颜色</span></a>
+						<ul>
+							<li class="toclevel-2 tocsection-20"><a href="#硬编码颜色"><span class="tocnumber">5.1</span>
+									<span class="toctext">硬编码颜色</span></a>
+								<ul>
+									<li class="toclevel-3 tocsection-21"><a href="#沼泽的颜色"><span
+												class="tocnumber">5.1.1</span> <span class="toctext">沼泽的颜色</span></a>
+									</li>
+									<li class="toclevel-3 tocsection-22"><a href="#黑森林的颜色"><span
+												class="tocnumber">5.1.2</span> <span class="toctext">黑森林的颜色</span></a>
+									</li>
+									<li class="toclevel-3 tocsection-23"><a href="#恶地的颜色"><span
+												class="tocnumber">5.1.3</span> <span class="toctext">恶地的颜色</span></a>
+									</li>
+									<li class="toclevel-3 tocsection-24"><a href="#其他颜色"><span
+												class="tocnumber">5.1.4</span> <span class="toctext">其他颜色</span></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="toclevel-1 tocsection-25"><a href="#成就"><span class="tocnumber">6</span> <span
+								class="toctext">成就</span></a></li>
+					<li class="toclevel-1 tocsection-26"><a href="#进度"><span class="tocnumber">7</span> <span
+								class="toctext">进度</span></a></li>
+					<li class="toclevel-1 tocsection-27"><a href="#历史"><span class="tocnumber">8</span> <span
+								class="toctext">历史</span></a></li>
+					<li class="toclevel-1 tocsection-28"><a href="#你知道吗"><span class="tocnumber">9</span> <span
+								class="toctext">你知道吗</span></a></li>
+					<li class="toclevel-1 tocsection-29"><a href="#画廊"><span class="tocnumber">10</span> <span
+								class="toctext">画廊</span></a>
+						<ul>
+							<li class="toclevel-2 tocsection-30"><a href="#日出和日落"><span class="tocnumber">10.1</span>
+									<span class="toctext">日出和日落</span></a></li>
+							<li class="toclevel-2 tocsection-31"><a href="#早期开发"><span class="tocnumber">10.2</span>
+									<span class="toctext">早期开发</span></a></li>
+						</ul>
+					</li>
+					<li class="toclevel-1 tocsection-32"><a href="#参考"><span class="tocnumber">11</span> <span
+								class="toctext">参考</span></a></li>
+					<li class="toclevel-1 tocsection-33"><a href="#参见"><span class="tocnumber">12</span> <span
+								class="toctext">参见</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="daohang"
+			style=" ">
+			<div class="jianGe">
+
+			</div><a href="index.html">
+				<button>
+					回主页
+				</button>
+			</a>
+			<div class="jianGe">
+
+			</div>
+			<a href="Terraria.html">
+				<button>
+					看看泰拉瑞亚
+				</button>
+			</a>
+			<div class="jianGe">
+
+			</div><a href="arknights.html">
+				<button>
+					看看明日方舟
+				</button></a>
+			<div class="jianGe">
+
+			</div><a href="biaodan.html">
+				<button>
+					做网页这哥们太帅了我要认识认识他
+				</button></a>
+			<div class="jianGe">
+
+			</div>
+		</div>
+		<script>
+			// 定时换图
+			var j = 0;
+			var mcimg = [];
+
+			function read() {
+				var mc13 = "img/3.jpg";
+				mcimg.push(mc13);
+				var mc2 = "img/1.jpg";
+				mcimg.push(mc2);
+				var mc03 = "img/2.jpg";
+				mcimg.push(mc03);
+				var mc7 = "img/7.jpg";
+				mcimg.push(mc7);
+				var mc08 = "img/5.jpg";
+				mcimg.push(mc08);
+				var mc6 = "img/6.jpg";
+				mcimg.push(mc6);
+				var mc9 = "img/9.jpg";
+				mcimg.push(mc9);
+				var mc10 = "img/mc1.jpg";
+				mcimg.push(mc10);
+				var mc11 = "img/mc3.jpg";
+				mcimg.push(mc11);
+				var mc12 = "img/mc4.jpg";
+				mcimg.push(mc12);
+			}
+
+			function alternative() {
+
+				for (j = Math.floor(Math.random() * mcimg.length); document.getElementById("bgimg").src === mcimg[j];) {
+					j = Math.floor(Math.random() * mcimg.length)
+				}
+				document.getElementById("bgimg").src = mcimg[j];
+				// document.getElementsByTagName('div')[0].innerHTML = mcimg[j];
+
+			}
+			// 点击换页
+			var jianjie = document.getElementById('jjie');
+			var weiding = document.getElementById('toBeSure');
+			var thJianjie = document.getElementById('isJianjie');
+			var thWeiding = document.getElementById('qunxi');
+
+			function kanJianjie() {
+				jianjie.style.zIndex = 3;
+				jianjie.style.display = 'block';
+				weiding.style.display = 'none';
+				weiding.style.zIndex = 1;
+			}
+
+			function kanWeiding() {
+				jianjie.style.zIndex = 1;
+				jianjie.style.display = 'none';
+				weiding.style.display = 'block';
+				weiding.style.zIndex = 3;
+			}
+			// 点击音效
+			window.addEventListener('click', function(e) {
+				document.getElementById('clickM').play();
+			});
+
+			// 启动执行
+			window.onload = function() {
+				document.getElementsByTagName('html')[0].style = 'margin:0;width:100%;height:100%;';
+				document.getElementsByTagName('body')[0].style = 'margin:0;width:100%;height:100%;';
+				read();
+
+				setInterval(alternative, 3000);
+				// 
+
+
+			};
+		</script>
+	</body>
+</html>

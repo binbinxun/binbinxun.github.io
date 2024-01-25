@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#form {
+				border: sandybrown 0.0625rem;
+				position: absolute;
+				padding-top: 2.25rem;
+				padding-left: 1rem;
+				height: 25rem;
+				width: 20%;
+				left: 40%;
+				height: 50%;
+				top: 10%;
+				box-shadow: 1rem 1rem 5rem 1rem blanchedalmond;
+				background-color: bisque;
+			}
+
+			#form:hover #option {
+				opacity: 1;
+				transition: 1s;
+				top: -10%;
+			}
+#form:
+			form {
+				color: orange;
+			}
+
+			input {
+				margin-top: 0.1rem;
+				: ;
+			}
+
+			label {
+				text-align: right;
+				width: 6.25rem;
+				display: inline-block;
+			}
+
+			#email {
+				border: sandybrown 0.0625rem;
+				position: absolute;
+				padding-top: 2.25rem;
+				padding-left: 1rem;
+				height: 25rem;
+				width: 20%;
+				left: 40%;
+				height: 50%;
+				top: 10%;
+				box-shadow: 1rem 1rem 5rem 1rem blanchedalmond;
+				background-color: bisque;
+				display: none;
+			}
+
+			#option {
+				background-color: #ffefc4;
+				display: block;
+				border: chocolate 0.1rem solid;
+				position: absolute;
+				bottom: -10%;
+				opacity: 0;
+				height: 3rem;
+			}
+			#option:hover{
+				background-color: #9a9076;
+			}
+		</style>
+
+	</head>
+	<body style="background-color:#fdf0e5;">
+		<form action="new_file.html" method="POST" id="form">
+			<div style="width: 100%;text-align: center;" autocomplete="on">
+				<span id="span1" style="font-size:2rem;color:orange;top:0%;width:100rem;height: 0%;">用户注册页面</span>
+			</div>
+			<hr color="orange" width="80%">
+			<label>
+				用户名：</label>
+			<input type="text" required pattern="[\w]{5,20}" title="要求5-20位" placeholder="仅限数字字母下划线">
+			<br>
+			<label for="">
+				密&nbsp;&nbsp;&nbsp;码：</label>
+
+			<input type="password" id="password" required pattern="[\w]{5,20}" title="要求5-20位"
+				placeholder="仅限数字字母下划线"><br>
+			<label for="">确认密码：</label>
+			<input id="sure" type="password" required pattern="[\w]{5,20}" title="要求5-20位" placeholder="仅限数字字母下划线"><br>
+			<label for="">邮箱：</label>
+			<input type="email" required pattern="{5,20}" title="要求5-20位" placeholder="仅限数字字母下划线">
+			<input type="submit" id="" name="" value="提交" style="background-color:orange;color:rgb(122, 95, 63)" onclick="location.href:'./index.html'"  />
+			<div id="option" style=" " onclick="sendEmail()" type="button" >
+				不想注册的话可以点这里给我们（就一个人)
+					发个邮件
+	
+			</div>
+		</form>
+		<div id="email"><input id="subject" type="text" placeholder="这里写标题" style="width: 12.5rem;" required>
+		<button
+				id='submit' onclick="sure()" >确认</button>
+				<a href="" id="send" >发送</a>
+				<input id="text" type="text" placeholder="这里写内容" style="width: 12.5rem;">
+				 </div>
+				 <script>
+					 function sendEmail(){
+						 document.getElementById('email').style.display='block';
+						 document.getElementById('form').style.display='none';
+					 }
+					 function sure(){
+						 document.getElementById('send').href="mailto:someone@example.com? Subject="+document.getElementsById('subject').value"&body="document.getElementsById('body').value;
+					 }
+				 </script>
+	</body>
+</html>

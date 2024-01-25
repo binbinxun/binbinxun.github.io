@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			button:hover{
+				background-color: grey;transition: 1s;
+				box-shadow: 0.5rem #d2d4ce;
+			}
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				width: 100%;
+				height: 100vh;
+				background-color: black;
+				position: relative;
+			}
+
+			#canvas {
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: -999;
+			}
+
+			#audioplayer {
+				position: absolute;
+				left: 30%;
+				top: 20%;
+				width: 40%;
+				border: white solid;
+			}
+
+			#hbimg {
+				position: absolute;
+				left: 30%;
+				top: 0;
+				width: 20rem;
+				z-index: 1;
+				height: 20rem;
+				background-image: url('img/cheems.webp');
+				background-size: cover;
+				background-repeat: no-repeat;
+				border-radius: 50%;
+				animation: zhuan 5s linear infinite;
+			}
+
+			#last,
+			#next,
+			#pause {
+				position: absolute;
+				z-index: 2;
+				border-radius: 50%;
+				width: 5rem;
+				height: 5rem;
+
+			}
+
+			#last {
+				left: 0;
+				top: 2rem;
+			}
+
+			#pause {
+				left: 50%;
+				bottom: 5rem;
+				background-image: url('img/3.jpg');
+				background-size: 150%;
+				box-shadow: 0 0 0 0;
+
+				color: aliceblue;
+
+			}
+
+
+			#next {
+				right: 0;
+				top: 2rem;
+			}
+
+			@keyframes zhuan {
+				0% {
+					transform: rotate(0);
+				}
+
+				50% {
+					transform: rotate(180deg);
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="daohang">
+			<a href="index.html">
+				<button>
+					回主页
+				</button>
+			</a>
+			<a href="Terraria.html">
+				<button>
+					看看泰拉瑞亚
+				</button>
+			</a><a href="mc.html">
+				<button>
+					看看我的世界
+				</button></a><a href="">
+				<button>
+					去4
+				</button></a>
+		</div>
+		<button onclick="setBgm()" >调背景音乐</button>
+		<button onclick="viewHost()">看明日方舟</button>
+		<div id="setBgm" style="display: none;" >
+
+
+			<div id="leaf"><canvas id="canvas"></canvas>
+				<audio id="bgm" loop="loop"></audio>
+				<div id="audioplayer">
+					<p id="name" style="color: white;"></p>
+					<button style="" id="hbimg"></button>
+					<button id="last" onclick="toLast()">
+						上一首
+					</button>
+					<button id="pause" onclick="pauseAndPlay()">
+						暂停/播放
+					</button>
+
+					<button id="next" onclick="toNext()">
+						下一首
+					</button>
+					<input type="range" id="volume" style="position:absolute;left:0;top:20rem" min='0' max="1"
+						step="0.01" onchange='setVolume()'>
+
+				</div>
+			</div>
+		</div>
+		<div id="host" style="width: 100%;height: 100%;z-index: -1;display: block;margin:auto;text-align: center;color:whitesmoke"  >
+			没时间了不加内容了，开摆<br>这是主页展示内容<br>可以看看bgm设置界面<br>自行决定播放与否<br>可以调节音量<br>希望有限几首歌里有你喜欢的<br>主页那个gif不是网页做的是直接用的gif<br />
+			来自b站up主<a href="https://space.bilibili.com/3922656?spm_id_from=333.337.search-card.all.click" style="color: ghostwhite;" >七饼饼子</a>
+		</div>
+		<script>
+			// z-index
+			function setBgm() {
+				document.getElementById('setBgm').style.display = 'block';
+				document.getElementById('host').style.display='none';
+			}
+function viewHost() {
+				document.getElementById('setBgm').style.display = 'none';
+				document.getElementById('host').style.display='block';
+			}
+			// 
+			var bgm = document.getElementById('bgm');
+			bgm.src = "bgm/黄金时代的遗产.mp3";
+			var bgmList = [];
+			var aplay = document.getElementById('name');
+
+
+			var j = 0;
+
+			function setVolume() {
+				bgm.volume = document.getElementById('volume').value;
+			}
+
+			function read() {
+				var s1 = "bgm/黄金时代的遗产.mp3";
+				bgmList.push(s1);
+				var s2 = "bgm/愚人曲.mp3";
+				bgmList.push(s2);
+				var s3 = "bgm/深渊梦呓.mp3";
+				bgmList.push(s3);
+				var s4 = "bgm/礁石不朽.mp3";
+				bgmList.push(s4);
+			}
+
+			function toLast() {
+				if (j == 0)
+					j = bgmList.length - 1;
+				else
+					j--;
+				if (bgm.played)
+					bgm.pause();
+				bgm.src = bgmList[j];
+				bgm.play();
+				aplay.innerHTML = bgmList[j];
+			}
+
+			function toNext() {
+				if (j == bgmList.length - 1)
+					j = 0;
+				else
+					j++;
+				if (bgm.played)
+					bgm.pause();
+				bgm.src = bgmList[j];
+				bgm.play();
+				aplay.innerHTML = bgmList[j];
+			}
+
+			function pauseAndPlay() {
+				if (bgm.paused) {
+					bgm.play();
+					document.getElementById('pause').innerHTML = "暂停"
+				} else {
+					bgm.pause();
+					document.getElementById('pause').innerHTML = "播放"
+				}
+			}
+			read();
+			aplay.innerHTML = bgmList[j];
+			// 
+			const canvas = document.getElementById("canvas");
+			const ctx = canvas.getContext("2d");
+
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+
+			ctx.fillStyle = "#003bff";
+			ctx.font = "normal normal 800 16px Lucida Sans";
+			ctx.fillText("Arknights", 1, 40);
+
+			// 获取画布100*100区域的像素点信息
+			const imageData = ctx.getImageData(0, 0, 200, 200);
+			// 记录鼠标位置
+			const mouse = {
+				x: null,
+				y: null,
+				radius: 80
+			};
+
+			window.addEventListener("mousemove", (e) => {
+				mouse.x = e.x;
+				mouse.y = e.y;
+
+			});
+
+			class Particle {
+				constructor(x, y) {
+					this.x = x;
+					this.y = y;
+					this.baseX = x;
+					this.baseY = y;
+					this.size = 2;
+					this.density = Math.random() * 50 + 5;
+				}
+				draw() {
+					ctx.fillStyle = "#ffffff";
+					ctx.beginPath();
+					ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+					ctx.closePath();
+					ctx.fill();
+
+				}
+				update() {
+					const dx = mouse.x - this.x;
+					const dy = mouse.y - this.y;
+					const distance = Math.sqrt(dx * dx + dy * dy)
+					const maxDistance = mouse.radius;
+
+					const force = (maxDistance - distance) / distance;
+					const forceDirectionX = dx / distance;
+					const forceDirectionY = dy / distance;
+					const directionX = forceDirectionX * force * this.density;
+					const directionY = forceDirectionY * force * this.density;
+
+
+					if (distance < maxDistance) {
+						// this.size=10;
+						this.x -= directionX;
+						this.y -= directionY;
+
+					} else {
+						if (this.x !== this.baseX) {
+							const dx = this.x - this.baseX;
+							this.x -= dx / 10;
+						}
+						if (this.y !== this.baseY) {
+							const dy = this.y - this.baseY;
+							this.y -= dy / 10;
+						}
+					}
+				}
+			}
+
+
+
+			let ParticleList = [];
+
+			function init() {
+				// Array.from({
+				// 	length: 300
+				// }).forEach(() => {
+				// 	ParticleList.push(new Particle(
+				// 		canvas.width * math.random(),
+				// 		canvas.height * math.random()
+				// 	))
+				// })
+				// imageDate=>{width,height,date}
+				// date=>{r,g,b,a}
+				for (let y = 0; y < imageData.height; y++) {
+					for (let x = 0; x < imageData.width; x++) {
+						if (imageData.data[y * 4 * imageData.width + x * 4 + 3] > 100) {
+							const p = new Particle(x * 20, y * 20);
+							ParticleList.push(p);
+						}
+					}
+				}
+			}
+			init();
+
+
+
+			function animate() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ParticleList.forEach((p) => {
+					p.update();
+					p.draw();
+				});
+				// connect();
+				requestAnimationFrame(animate);
+
+			}
+			animate();
+
+			function connect() {
+				let o = 1;
+
+				for (let a = 0; a < ParticleList.length; a++) {
+					for (let b = 0; b < ParticleList.length; b++) {
+						const dx = ParticleList[a].x - ParticleList[b].x;
+						const dy = ParticleList[a].y - ParticleList[b].y;
+						const distance = Math.sqrt(dx * dx + dy * dy);
+						o = 1 - distance / 50;
+						ctx.strokeStyle = "rgba(255,255,255," + o + ")";
+						if (distance < 30) {
+							ctx.lineWidth = 2;
+							ctx.beginPath();
+							ctx.moveTo(ParticleList[a].x, ParticleList[a].y);
+							ctx.lineTo(ParticleList[b].x, ParticleList[b].y);
+							ctx.stroke();
+
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

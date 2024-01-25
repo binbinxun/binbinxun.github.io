@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/cssfile1.css" />
+
+		<title>这是一个一个一个大作业啊</title>
+	</head>
+	<body
+		style="background-repeat: no-repeat;background-size: cover;cursor: url(img/Jäger.webp);background-color: cornflowerblue;">
+		<div id="root" style="">
+			<span style="color: aliceblue;">搜索</span>
+			<input type="search" style="width: 90%;"><p style="position:absolute;color: #757575;top: -1rem;left: 3rem;">假装是能用的搜索框</p>
+			<button onclick="alert('没找到哦（心虚）')" >假装能搜索</button>
+			<button id="yoshi" onclick="oAndOff()" style="float: right;z-index: 20;" >正能量开关</button>
+			<div id="zheng" >
+			正能量<br>
+			好好学习<br>
+			天天向上<br>
+			</div>
+			<div id="kaibaila" >
+				原曲：重音テト,なまはげP - 辞めてやるよ歌い手なんか<br>
+				歌名：网页什么的不干啦<br>
+				填词：我<br>
+				翻唱：还没翻唱呢<br>
+				我：放弃啦~<br>
+				不干啦~<br>
+				网页什么的不做啦~<br>
+				查遍网络敲半天键盘<br>
+				还是做不出效果啊~~<br>
+				时间啊~<br>
+				不够啦~<br>
+				作业什么的不管啦~<br>
+				反正无论如何都做不完<br>
+				那就直接开摆吧<br>
+				从作业通知就开始制作~~<br>
+				尝试各种花里胡哨的效果~~<br>
+				看着别人代码我也自己做~<br>
+				偶尔还能成功~~<br>
+				可是还是失败时间更多~~<br>
+				一点一点越来越~失落~~<br>
+				几次三番花半天时间无果<br>
+				鼠标一砸<br>键盘一拍<br>心态~崩了<br>
+				鼠标&键盘&Hbuilder X：可是作业不做你一定会挂科~~<br>
+				为了能够毕业你还要重新使用我~~<br>
+				不论如何请你打开网页继续受折磨~~<br>
+				敲烂桌子踢坏椅子啊↗<br>别在摧残我~~<br>
+				无能怒吼啊（发泄方式）~~<br>
+				我：放弃啦~<br>
+				不干啦~<br>
+				网页什么的不做啦~<br>
+				连着几天一直盯屏幕<br>
+				眼睛真的好痛啊……<br>
+			</div>
+
+			<!-- 		<div id="bgm">
+				<audio id="bgmSoF" src="bgm/愚人曲.mp3" loop="true" autoplay="autoplay">
+					当前浏览器不支持audio
+				</audio><audio id="bgmCS" src="bgm/深渊梦呓.mp3" loop="true">
+					当前浏览器不支持audio
+				</audio><audio id="bgmImtSto" src="bgm/礁石不朽.mp3" loop="true">
+					当前浏览器不支持audio
+				</audio><audio id="bgmLoGA" src="bgm/黄金时代的遗产.mp3" loop="true">
+					当前浏览器不支持audio
+				</audio>
+			</div>
+			<div id="right">
+				<button id="button1" onclick="audioplayer1()" onclick="changebgi()" type="button" class="button">
+					按钮
+				</button>
+				<button class="button" type="button" id="button2" style="width: 6.25rem;height: 6.25rem;"
+					onclick="changebgi()"></button>
+				<button type="button" class="button" id="button3"></button>
+				<button type="button" class="button" id="button4"></button>
+			</div> -->
+			<div class="cards">
+				<a class='link' href="mc.html">
+					<div class="card" id="card1">
+						<div class="img-box">
+							<img class="cardimg" id="img1">
+							<img class="cardimg" id="img2" src="img/4.jpg">
+						</div>
+						<div class="stens">
+							<img src="img/9.jpg" alt="">
+						</div>
+					</div>
+				</a>
+				<a href="Terraria.html">
+					<div class="card" id="card2">
+						<div class="img-box">
+							<img class="cardimg" src="img/Terraria/JourneysEnd-Day-Logo-PC-Wallpaper.png"
+								style="filter: blur(0.5);">
+							<img class="cardimg"
+								src="img/Terraria/bde09244e08554d7a78a409dcef262f730076cb3.png@942w_707h_progressive.webp">
+						</div>
+						<div class="stens">
+							<img
+								src="img/Terraria/src=http___www.duotegame.com_picfiles_ct_2017_07_10_2017071040025859.jpg&refer=http___www.duotegame.webp">
+						</div>
+
+					</div>
+				</a><a href="arknights.html">
+					<div class="card" id="card3">
+						<div class="img-box">
+							<img class="cardimg" src="img/a06a058c301c0329b40c66df4f426f13d10f967b.gif@.webp">
+							<img class="cardimg" src="img/微信图片_20220627171457.jpg">
+						</div>
+						<div class="stens">
+							<img src="img/微信图片_20220627171513.jpg">
+
+						</div>
+					</div>
+				</a><a href="biaodan.html">
+					<div class="card" id="card4">
+						<div class="img-box">
+							<img class="cardimg" src="img/siha.jpg">
+							<img class="cardimg" src="img/taimai.jpg">
+						</div>
+						<div class="stens" style="text-align: center;margin:auto">天呐做网页这人好美好优雅我要<br>
+							<span>加入</span>
+						</div>
+
+					</div>
+				</a>
+				<canvas id="mouseCanvas"></canvas>
+				<audio src="bgm/重音テト,なまはげP - 辞めてやるよ歌い手なんか.mp3" style="position: absolute;top: -4rem;left: -8rem;" controls loop autoplay></audio>
+			</div>
+		<script src="js/jsfile1.js" type="text/javascript" charset="utf-8"></script>	
+	</body>
+</html>

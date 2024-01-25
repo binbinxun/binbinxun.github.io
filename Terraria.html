@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			#daohang {
+				position: fixed;top: 0%;left: 0%;
+				height: 100%;
+				width: 16%;
+				background-color: rgba(135, 227, 125, 0.5);
+				overflow: hidden;
+				z-index: 555;
+			}
+			
+			#daohang button {
+				height: 10%;
+				width: 80%;
+				margin: auto;
+				left: 1rem;
+				background-color: rgba(167, 201, 66, 0.5);
+				position: relative;
+				top: 0%;
+				transition: 1s;
+				transition-property: all;
+				overflow: hidden;
+			}
+			
+			#daohang button:hover {
+				box-shadow: #4c701c 1rem 1rem;
+				background-color: rgba(169, 203, 66, 0.5);
+				top: -3%;
+				transition: 1s;
+				transition-property: all;
+			}
+			
+			#daohang .jianGe {
+				height: 10%;
+				display: block;
+			}
+			
+			#piantou {
+				width: 100%;
+				height: 100%;
+				border: solid black 0.3125rem;
+				margin: 0 auto;
+			}
+
+			.bgimg {
+				position: absolute;
+				display: block;
+				animation: 1.5s dadada linear;
+				opacity: 0;
+				height: 100%;
+				width: 100%;
+				opacity: 0;
+				margin: 0 0 0 0;
+			}
+.bgimg:nth-child(2){
+	animation-delay: 0.3s;z-index: 12;
+}
+.bgimg:nth-child(3){
+	animation-delay: 0.6s;z-index: 11;
+}.bgimg:nth-child(4){
+	animation-delay: 0.9s;z-index: 10;
+}.bgimg:nth-child(5){
+	animation-delay: 1.2s;z-index: 9;
+}
+.bgimg:nth-child(6){
+	animation-delay: 1.5s;z-index: 8;
+}
+.bgimg:nth-child(7){
+	animation-delay: 1.8s;z-index: 7;
+}
+.bgimg:nth-child(8){
+	animation-delay: 2.1s;z-index: 6;
+}.bgimg:nth-child(9){
+	animation-delay: 2.4s;z-index: 5;
+}.bgimg:nth-child(10){
+	animation-delay: 2.7s;z-index: 4;
+}.bgimg:nth-child(11){
+	animation-delay: 3.0s;z-index: 3;
+}.bgimg:nth-child(12){
+	animation-delay: 3.3s;z-index: 2;
+}.bgimg:nth-child(13){
+	animation-delay: 0;z-index: -14;
+}.bgimg:nth-child(14){
+	animation-delay: 0.3s;z-index: -13;
+}.bgimg:nth-child(15){
+	animation-delay: 0.6s;z-index: -12;
+}.bgimg:nth-child(16){
+	animation-delay: 0.9s;z-index: -11;
+}.bgimg:nth-child(17){
+	animation-delay: 1.2s;z-index: -10;
+}.bgimg:nth-child(18){
+	animation-delay: 1.5s;z-index: -9;
+}.bgimg:nth-child(19){
+	animation-delay: 1.8s;z-index: -8;
+}.bgimg:nth-child(20){
+	animation-delay: 2.1s;z-index: -7;
+}.bgimg:nth-child(21){
+	animation-delay: 2.4s;z-index: -6;
+}.bgimg:nth-child(22){
+	animation-delay: 2.7s;z-index: -5;
+}.bgimg:nth-child(23){
+	animation-delay: 3.0s;z-index: -4;
+}.bgimg:nth-child(24){
+	animation-delay: 3.3s;z-index: -3;
+}#bgimg{
+	animation-delay: 3.6s;z-index: -999;	position: absolute;
+				display: block;
+				animation: 1.5s dadada linear;
+				opacity: 0;
+				height: 100%;
+				width: 100%;
+				opacity: 1;
+				margin: 0 0 0 0;
+	
+	
+}
+			@keyframes dadada {
+				0% {
+					width: 20%;
+					height: 20%;
+opacity: 1;
+
+
+					margin: 20% 40% 40% 40%;
+					
+
+				}
+
+				50% {
+					height: 100%;
+					width: 100%;
+					opacity: 1;
+					margin: 0 0 0 0;
+				}
+				100{
+					height: 100%;
+					width: 100%;
+					opacity: 0;
+					margin: 0 0 0 0;
+				}
+			}
+			@keyframes wait {
+				0%{
+					opacity: 0;
+				}
+				90%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 1;
+				}
+			}
+			#daohang{
+				animation: wait 6s linear;
+			}
+		</style>
+		<title></title>
+	</head>
+	<body>
+<div id="daohang"
+			style=" ">
+			<div class="jianGe">
+
+			</div><a href="index.html">
+				<button>
+					回主页
+				</button>
+			</a>
+			<div class="jianGe">
+
+			</div>
+			<a href="mc.html">
+				<button>
+					看看我的世界
+				</button>
+			</a>
+			<div class="jianGe">
+
+			</div><a href="arknights.html">
+				<button>
+					看看明日方舟
+				</button></a>
+			<div class="jianGe">
+
+			</div><a href="biaodan.html">
+				<button>
+					做网页这哥们太帅了我要认识认识他
+				</button></a>
+			<div class="jianGe">
+
+			</div>
+		</div>
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 15_39_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_09.png" alt="">
+		
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_11.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_12.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_13.png" alt="">
+		
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_15.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_16.png" alt="">
+		
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_18.png" alt="">
+		
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_20.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_22.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_23.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_24.png" alt="">
+		<img class="bgimg" src="img/Terraria/Capture 2022-06-27 16_03_26.png" alt="">
+		<img id="bgimg" src="img/Terraria/JourneysEnd-Day-Logo-PC-Wallpaper.png" alt="">
+		</div>
+	</body>
+</html>
